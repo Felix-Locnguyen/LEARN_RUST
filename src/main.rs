@@ -1,17 +1,10 @@
-//Array
-fn main() {
-    let number: [i32; 3] = [100,200,300];
-    let get_number = number[1];
-    println!("number = {}", get_number);
-
-
-    // in ra hàng với 32 số  0
-    let _hashing: [i32; 32] = [0;32];
-    println!("hashing = {:?}", _hashing);
-
-    // dùng vòng lặp for 
-    for i in _hashing.iter(){
-        print!("{}", i );
-    }
+fn main() { 
+    let s1 = String::from("hello"); 
+    let (s2, len) = calculate_lenght(s1);
+    println!("do dai cua {} la {}", s2, len);
 }
 
+fn calculate_lenght(some_string: String) -> (String, usize) {
+    let length = some_string.len();
+    (some_string, length)
+}
