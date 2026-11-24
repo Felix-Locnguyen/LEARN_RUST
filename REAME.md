@@ -1,9 +1,45 @@
-# Tạo dự án mới (nếu chưa có)
-cargo new my_app
-cd my_app
+```rust
 
-# Biên dịch và chạy ngay (chế độ debug, build nhanh)
-cargo run
+// Variable
+fn main() {
+    let mut x: i32 = 20;
+    println!("x = {}", x);
 
-# Chạy ở chế độ tối ưu hiệu năng (release, build lâu hơn nhưng chạy nhanh)
-cargo run --release
+    x = 30;
+    println!("x = {}", x);
+
+    const HANG_SO: u128 = 1_000_000;
+    println!("Hang So = {}", HANG_SO);
+}
+```
+
+```rust
+// Shadowing
+fn main(){
+    let outer = 10; 
+    {
+        let inner = 200;
+        println!("inner = {} ", inner);
+        let outer = 300; 
+        println!("outer = {} ", outer);
+
+    }
+    println!("outer = {} ", outer);
+}
+```
+
+```rust
+// tuple và print gía trị trong tuple
+fn main() {
+    let tup: (&str, i32) = ("hello", 100_000);
+    println!("{:?}", tup);
+
+    let (text, _integer): (&str, i32) = tup;
+    let value: i32 = tup.1;
+
+    println!("{}", value);
+    println!("{}", text);
+}
+```
+
+
